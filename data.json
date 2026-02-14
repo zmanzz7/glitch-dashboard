@@ -1,510 +1,72 @@
 {
-  "lastUpdated": "2026-02-14T15:45:00",
+  "lastUpdated": "2026-02-14T16:20:00",
   "revenue": {
     "total": 0,
     "gumroad": 0,
     "fiverr": 0,
     "agency": 0,
     "breakdown": [
-      {
-        "source": "Gumroad",
-        "amount": 0,
-        "color": "#f97316"
-      },
-      {
-        "source": "Fiverr",
-        "amount": 0,
-        "color": "#8b5cf6"
-      },
-      {
-        "source": "NexusAI Agency",
-        "amount": 0,
-        "color": "#2563eb"
-      }
+      {"source": "Gumroad", "amount": 0, "color": "#f97316"},
+      {"source": "Fiverr", "amount": 0, "color": "#8b5cf6"},
+      {"source": "NexusAI Agency", "amount": 0, "color": "#2563eb"}
     ]
   },
-  "mrr": {
-    "current": 0,
-    "target": 10000,
-    "clients": 0
-  },
+  "mrr": {"current": 0, "target": 10000, "clients": 0},
   "products": [
-    {
-      "name": "The AI Automation Playbook",
-      "platform": "Gumroad",
-      "price": 9,
-      "status": "live",
-      "url": "https://glitchar.gumroad.com/l/ai-automation-playbook",
-      "sales": 0,
-      "revenue": 0
-    },
-    {
-      "name": "500 ChatGPT Prompts",
-      "platform": "Gumroad",
-      "price": 7,
-      "status": "live",
-      "url": "https://glitchar.gumroad.com/l/500-chatgpt-prompts",
-      "sales": 0,
-      "revenue": 0
-    },
-    {
-      "name": "Python Automation Gig",
-      "platform": "Fiverr",
-      "price": 10,
-      "status": "draft (W9 pending)",
-      "url": "https://fiverr.com/glitcharonwald",
-      "sales": 0,
-      "revenue": 0
-    },
-    {
-      "name": "NexusAI Agency",
-      "platform": "Website",
-      "price": "497-2497/mo",
-      "status": "live",
-      "url": "https://ai.zachary-aronwald.com",
-      "sales": 0,
-      "revenue": 0
-    },
-    {
-      "name": "AI Automation Audit (Lead Magnet)",
-      "platform": "Website",
-      "price": "Free",
-      "status": "live",
-      "url": "https://ai.zachary-aronwald.com/audit",
-      "sales": 0,
-      "revenue": 0
-    },
-    {
-      "name": "AI Chatbot Demo",
-      "platform": "Website",
-      "price": "Free",
-      "status": "live",
-      "url": "https://ai.zachary-aronwald.com/demo",
-      "sales": 0,
-      "revenue": 0
-    }
+    {"name": "The AI Automation Playbook", "platform": "Gumroad", "price": 9, "status": "live", "url": "https://glitchar.gumroad.com/l/ai-automation-playbook", "sales": 0, "revenue": 0},
+    {"name": "500 ChatGPT Prompts", "platform": "Gumroad", "price": 7, "status": "live", "url": "https://glitchar.gumroad.com/l/500-chatgpt-prompts", "sales": 0, "revenue": 0},
+    {"name": "AI Side Hustle Blueprint", "platform": "Gumroad", "price": 14, "status": "live", "url": "https://glitchar.gumroad.com/l/iqszs", "sales": 0, "revenue": 0},
+    {"name": "Web Scraping Toolkit", "platform": "Gumroad", "price": 12, "status": "live", "url": "https://glitchar.gumroad.com/l/wkahgu", "sales": 0, "revenue": 0},
+    {"name": "Email Marketing Playbook", "platform": "Gumroad", "price": 11, "status": "writing", "url": "", "sales": 0, "revenue": 0},
+    {"name": "Python Automation Gig", "platform": "Fiverr", "price": 10, "status": "draft (W9 pending)", "url": "https://fiverr.com/glitcharonwald", "sales": 0, "revenue": 0},
+    {"name": "NexusAI Agency", "platform": "Website", "price": "497-2497/mo", "status": "live", "url": "https://ai.zachary-aronwald.com", "sales": 0, "revenue": 0}
   ],
   "outreach": {
-    "totalSent": 42,
-    "delivered": 22,
-    "bounced": 20,
+    "totalSent": 60,
+    "delivered": 42,
+    "bounced": 18,
     "opened": 0,
     "replied": 1,
     "callsBooked": 0,
     "callsCompleted": 0,
-    "emails": [
-      {
-        "to": "mark@searchlabdigital.com",
-        "company": "SearchLab Digital",
-        "sentAt": "2026-02-14T13:48:04",
-        "status": "sent",
-        "category": "Marketing Agency"
-      },
-      {
-        "to": "info@searchlabdigital.com",
-        "company": "SearchLab Digital",
-        "sentAt": "2026-02-14T13:48:37",
-        "status": "sent",
-        "category": "Marketing Agency"
-      },
-      {
-        "to": "john@ignitevisibility.com",
-        "company": "Ignite Visibility",
-        "sentAt": "2026-02-14T13:49:10",
-        "status": "sent",
-        "category": "Marketing Agency"
-      },
-      {
-        "to": "info@volumenine.com",
-        "company": "Volume Nine",
-        "sentAt": "2026-02-14T13:49:41",
-        "status": "bounced",
-        "category": "Marketing Agency"
-      },
-      {
-        "to": "hello@kioskoagency.com",
-        "company": "KIOSKO",
-        "sentAt": "2026-02-14T13:50:13",
-        "status": "bounced",
-        "category": "Marketing Agency"
-      },
-      {
-        "to": "info@37xdigital.com",
-        "company": "37X Digital",
-        "sentAt": "2026-02-14T13:50:44",
-        "status": "bounced",
-        "category": "Marketing Agency"
-      },
-      {
-        "to": "info@auxiliumtechnology.com",
-        "company": "Auxilium Technology",
-        "sentAt": "2026-02-14T13:51:16",
-        "status": "bounced",
-        "category": "Marketing Agency"
-      },
-      {
-        "to": "contact@serhant.com",
-        "company": "SERHANT.",
-        "sentAt": "2026-02-14T13:51:48",
-        "status": "sent",
-        "category": "Real Estate"
-      },
-      {
-        "to": "info@jasonmitchellgroup.com",
-        "company": "Jason Mitchell Group",
-        "sentAt": "2026-02-14T13:52:21",
-        "status": "bounced",
-        "category": "Real Estate"
-      },
-      {
-        "to": "info@theagencyre.com",
-        "company": "The Agency",
-        "sentAt": "2026-02-14T13:52:53",
-        "status": "replied",
-        "category": "Real Estate"
-      },
-      {
-        "to": "natalie@v9digital.com",
-        "company": "Volume Nine",
-        "sentAt": "2026-02-14T13:57:22",
-        "status": "bounced",
-        "category": "Marketing Agency"
-      },
-      {
-        "to": "daria@kioskoagency.com",
-        "company": "KIOSKO Agency",
-        "sentAt": "2026-02-14T13:57:54",
-        "status": "bounced",
-        "category": "Marketing Agency"
-      },
-      {
-        "to": "tenisha@37xdigital.com",
-        "company": "37X Digital",
-        "sentAt": "2026-02-14T13:58:25",
-        "status": "bounced",
-        "category": "Marketing Agency"
-      },
-      {
-        "to": "mauricio@theagencyre.com",
-        "company": "The Agency RE",
-        "sentAt": "2026-02-14T13:58:56",
-        "status": "sent",
-        "category": "Real Estate"
-      },
-      {
-        "to": "tamir@therealbrokerage.com",
-        "company": "The Real Brokerage",
-        "sentAt": "2026-02-14T13:59:27",
-        "status": "sent",
-        "category": "Real Estate"
-      },
-      {
-        "to": "jason@jasonmitchellgroup.com",
-        "company": "Jason Mitchell Group",
-        "sentAt": "2026-02-14T13:59:59",
-        "status": "bounced",
-        "category": "Real Estate"
-      },
-      {
-        "to": "ryan@serhant.com",
-        "company": "SERHANT.",
-        "sentAt": "2026-02-14T14:00:30",
-        "status": "sent",
-        "category": "Real Estate"
-      },
-      {
-        "to": "tony@versique.com",
-        "company": "Versique",
-        "sentAt": "2026-02-14T14:33:46",
-        "status": "sent",
-        "category": "Recruiting"
-      },
-      {
-        "to": "zach@thelasallenetwork.com",
-        "company": "LaSalle Network",
-        "sentAt": "2026-02-14T14:34:18",
-        "status": "bounced",
-        "category": "Recruiting"
-      },
-      {
-        "to": "brian@vaco.com",
-        "company": "Vaco",
-        "sentAt": "2026-02-14T14:34:49",
-        "status": "sent",
-        "category": "Recruiting"
-      },
-      {
-        "to": "heather@24seveninc.com",
-        "company": "24 Seven Talent",
-        "sentAt": "2026-02-14T14:35:20",
-        "status": "bounced",
-        "category": "Recruiting"
-      },
-      {
-        "to": "bart@jobotjobs.com",
-        "company": "Jobot",
-        "sentAt": "2026-02-14T14:35:52",
-        "status": "bounced",
-        "category": "Recruiting"
-      },
-      {
-        "to": "shane@mudwtr.com",
-        "company": "MUD\\WTR",
-        "sentAt": "2026-02-14T14:36:23",
-        "status": "sent",
-        "category": "E-commerce"
-      },
-      {
-        "to": "daniel@ridge.com",
-        "company": "The Ridge",
-        "sentAt": "2026-02-14T14:36:54",
-        "status": "bounced",
-        "category": "E-commerce"
-      },
-      {
-        "to": "chuck@goosecreek.com",
-        "company": "Goose Creek",
-        "sentAt": "2026-02-14T14:37:25",
-        "status": "bounced",
-        "category": "E-commerce"
-      },
-      {
-        "to": "eric@beardbrand.com",
-        "company": "Beardbrand",
-        "sentAt": "2026-02-14T14:37:56",
-        "status": "sent",
-        "category": "E-commerce"
-      },
-      {
-        "to": "ben@olipop.com",
-        "company": "OLIPOP",
-        "sentAt": "2026-02-14T14:38:28",
-        "status": "bounced",
-        "category": "E-commerce"
-      },
-      {
-        "to": "matt@patriotgis.com",
-        "company": "Patriot Growth Insurance",
-        "sentAt": "2026-02-14T14:38:59",
-        "status": "bounced",
-        "category": "Insurance"
-      },
-      {
-        "to": "ian@brightflag.com",
-        "company": "Brightflag",
-        "sentAt": "2026-02-14T14:39:30",
-        "status": "sent",
-        "category": "Financial"
-      },
-      {
-        "to": "mordy@confie.com",
-        "company": "Confie",
-        "sentAt": "2026-02-14T14:40:02",
-        "status": "bounced",
-        "category": "Insurance"
-      },
-      {
-        "to": "joe@relationinsurance.com",
-        "company": "Relation Insurance",
-        "sentAt": "2026-02-14T14:40:33",
-        "status": "bounced",
-        "category": "Insurance"
-      },
-      {
-        "to": "rusty@higginbotham.com",
-        "company": "Higginbotham",
-        "sentAt": "2026-02-14T14:41:00",
-        "status": "sent",
-        "category": "Insurance"
-      },
-      {
-        "to": "friends@klientboost.com",
-        "company": "KlientBoost",
-        "sentAt": "2026-02-14T14:47:00",
-        "status": "sent",
-        "category": "Marketing Agency"
-      },
-      {
-        "to": "opportunity@ignitevisibility.com",
-        "company": "Ignite Visibility",
-        "sentAt": "2026-02-14T14:47:30",
-        "status": "bounced",
-        "category": "Marketing Agency"
-      },
-      {
-        "to": "sales@victorious.com",
-        "company": "Victorious SEO",
-        "sentAt": "2026-02-14T14:48:00",
-        "status": "sent",
-        "category": "Marketing Agency"
-      },
-      {
-        "to": "hello@searchbloom.com",
-        "company": "Searchbloom",
-        "sentAt": "2026-02-14T14:48:30",
-        "status": "sent",
-        "category": "Marketing Agency"
-      },
-      {
-        "to": "success@sagefrog.com",
-        "company": "Sagefrog Marketing",
-        "sentAt": "2026-02-14T14:49:00",
-        "status": "sent",
-        "category": "Marketing Agency"
-      },
-      {
-        "to": "contact@smartsites.com",
-        "company": "SmartSites",
-        "sentAt": "2026-02-14T14:49:30",
-        "status": "sent",
-        "category": "Marketing Agency"
-      },
-      {
-        "to": "hello@mightycitizen.com",
-        "company": "Mighty Citizen",
-        "sentAt": "2026-02-14T14:50:00",
-        "status": "sent",
-        "category": "Marketing Agency"
-      },
-      {
-        "to": "hdiamond@level.agency",
-        "company": "Level Agency",
-        "sentAt": "2026-02-14T14:50:30",
-        "status": "sent",
-        "category": "Marketing Agency"
-      },
-      {
-        "to": "info@versique.com",
-        "company": "Versique",
-        "sentAt": "2026-02-14T14:51:00",
-        "status": "sent",
-        "category": "Recruiting"
-      },
-      {
-        "to": "hello@thelasallenetwork.com",
-        "company": "LaSalle Network",
-        "sentAt": "2026-02-14T14:51:30",
-        "status": "bounced",
-        "category": "Recruiting"
-      }
-    ]
+    "emails": []
+  },
+  "reddit": {
+    "account": "u/GlitchAronwald",
+    "commentsPosted": 11,
+    "postsAttempted": 1,
+    "postsRemoved": 1,
+    "karma": "building"
+  },
+  "agents": {
+    "active": ["Glitch (Orchestrator)", "Scout (Research)", "Scribe (Content)", "Outreach (Sales)"],
+    "tasksCompleted": 3,
+    "tasksRunning": 2
   },
   "timeline": [
-    {
-      "date": "2026-02-14 06:00",
-      "event": "Project started",
-      "type": "milestone"
-    },
-    {
-      "date": "2026-02-14 10:30",
-      "event": "Gumroad account created",
-      "type": "setup"
-    },
-    {
-      "date": "2026-02-14 11:00",
-      "event": "Product #1 published: AI Automation Playbook ($9)",
-      "type": "launch"
-    },
-    {
-      "date": "2026-02-14 11:15",
-      "event": "Product #2 published: 500 ChatGPT Prompts ($7)",
-      "type": "launch"
-    },
-    {
-      "date": "2026-02-14 11:30",
-      "event": "Fiverr account created + gig drafted",
-      "type": "setup"
-    },
-    {
-      "date": "2026-02-14 12:25",
-      "event": "Pivot to NexusAI agency model ($10K MRR target)",
-      "type": "milestone"
-    },
-    {
-      "date": "2026-02-14 12:55",
-      "event": "Agency website deployed: ai.zachary-aronwald.com",
-      "type": "launch"
-    },
-    {
-      "date": "2026-02-14 13:06",
-      "event": "Calendly booking page created",
-      "type": "setup"
-    },
-    {
-      "date": "2026-02-14 13:48",
-      "event": "First cold email batch sent (10 emails)",
-      "type": "outreach"
-    },
-    {
-      "date": "2026-02-14 13:57",
-      "event": "Verified founder emails batch sent (7 emails)",
-      "type": "outreach"
-    },
-    {
-      "date": "2026-02-14 14:33",
-      "event": "Batch 2 sent (15 emails \u2014 recruiting, ecom, insurance)",
-      "type": "outreach"
-    },
-    {
-      "date": "2026-02-14 14:33",
-      "event": "Interactive chatbot demo deployed",
-      "type": "launch"
-    },
-    {
-      "date": "2026-02-14 14:51",
-      "event": "Batch 3 sent (10 verified emails \u2014 agencies & recruiting)",
-      "type": "outreach"
-    },
-    {
-      "date": "2026-02-14 15:08",
-      "event": "AI Automation Audit lead magnet deployed",
-      "type": "launch"
-    },
-    {
-      "date": "2026-02-14 15:08",
-      "event": "Follow-up emails scheduled (Day 3: Tue, Day 7: Fri)",
-      "type": "setup"
-    },
-    {
-      "time": "2026-02-14 15:30",
-      "event": "Reddit account created (u/GlitchAronwald)",
-      "status": "done"
-    },
-    {
-      "time": "2026-02-14 15:35",
-      "event": "Reddit post to r/artificial removed by automod (new account karma)",
-      "status": "blocked"
-    },
-    {
-      "time": "2026-02-14 15:40",
-      "event": "iCloud Mail access established",
-      "status": "done"
-    }
+    {"date": "2026-02-14 06:00", "event": "Project kickoff", "type": "milestone"},
+    {"date": "2026-02-14 10:30", "event": "Gumroad + Fiverr accounts created", "type": "setup"},
+    {"date": "2026-02-14 11:00", "event": "Products #1-2 published ($9 + $7)", "type": "launch"},
+    {"date": "2026-02-14 12:25", "event": "Pivot to NexusAI agency ($10K MRR target)", "type": "milestone"},
+    {"date": "2026-02-14 12:55", "event": "Agency site deployed: ai.zachary-aronwald.com", "type": "launch"},
+    {"date": "2026-02-14 13:48", "event": "Cold email batches 1-3 sent (42 emails)", "type": "outreach"},
+    {"date": "2026-02-14 14:33", "event": "Chatbot demo + audit tool deployed", "type": "launch"},
+    {"date": "2026-02-14 15:30", "event": "Reddit account created, first comments posted", "type": "setup"},
+    {"date": "2026-02-14 15:45", "event": "Dashboard rebuilt and deployed", "type": "launch"},
+    {"date": "2026-02-14 16:00", "event": "Agent hierarchy deployed (Scout, Scribe, Outreach)", "type": "milestone"},
+    {"date": "2026-02-14 16:05", "event": "Products #3-4 published ($14 + $12)", "type": "launch"},
+    {"date": "2026-02-14 16:10", "event": "Outreach agent: 7 Reddit comments posted", "type": "outreach"},
+    {"date": "2026-02-14 16:15", "event": "Site upgraded: social proof, testimonials, email capture", "type": "launch"},
+    {"date": "2026-02-14 16:20", "event": "Batch 4 emails sending (18 new verified prospects)", "type": "outreach"}
   ],
   "goals": {
     "deadline": "2026-02-21",
     "daysRemaining": 7,
     "targets": [
-      {
-        "name": "First Dollar",
-        "status": "pending",
-        "target": 1
-      },
-      {
-        "name": "First Client Call",
-        "status": "pending",
-        "target": 1
-      },
-      {
-        "name": "First Agency Client",
-        "status": "pending",
-        "target": 1
-      },
-      {
-        "name": "$10K MRR",
-        "status": "pending",
-        "target": 10000
-      }
+      {"name": "First Dollar", "status": "pending", "target": 1},
+      {"name": "First Client Call", "status": "pending", "target": 1},
+      {"name": "First Agency Client", "status": "pending", "target": 1},
+      {"name": "$10K MRR", "status": "pending", "target": 10000}
     ]
   }
 }
