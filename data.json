@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-14T14:57:00",
+  "lastUpdated": "2026-02-14T14:59:00",
   "revenue": {
     "total": 0,
     "gumroad": 0,
@@ -68,10 +68,10 @@
   ],
   "outreach": {
     "totalSent": 42,
-    "delivered": 32,
-    "bounced": 10,
+    "delivered": 22,
+    "bounced": 20,
     "opened": 0,
-    "replied": 0,
+    "replied": 1,
     "callsBooked": 0,
     "callsCompleted": 0,
     "emails": [
@@ -107,7 +107,7 @@
         "to": "hello@kioskoagency.com",
         "company": "KIOSKO",
         "sentAt": "2026-02-14T13:50:13",
-        "status": "sent",
+        "status": "bounced",
         "category": "Marketing Agency"
       },
       {
@@ -142,21 +142,21 @@
         "to": "info@theagencyre.com",
         "company": "The Agency",
         "sentAt": "2026-02-14T13:52:53",
-        "status": "sent",
+        "status": "replied",
         "category": "Real Estate"
       },
       {
         "to": "natalie@v9digital.com",
         "company": "Volume Nine",
         "sentAt": "2026-02-14T13:57:22",
-        "status": "sent",
+        "status": "bounced",
         "category": "Marketing Agency"
       },
       {
         "to": "daria@kioskoagency.com",
         "company": "KIOSKO Agency",
         "sentAt": "2026-02-14T13:57:54",
-        "status": "sent",
+        "status": "bounced",
         "category": "Marketing Agency"
       },
       {
@@ -205,7 +205,7 @@
         "to": "zach@thelasallenetwork.com",
         "company": "LaSalle Network",
         "sentAt": "2026-02-14T14:34:18",
-        "status": "sent",
+        "status": "bounced",
         "category": "Recruiting"
       },
       {
@@ -261,7 +261,7 @@
         "to": "ben@olipop.com",
         "company": "OLIPOP",
         "sentAt": "2026-02-14T14:38:28",
-        "status": "sent",
+        "status": "bounced",
         "category": "E-commerce"
       },
       {
@@ -289,7 +289,7 @@
         "to": "joe@relationinsurance.com",
         "company": "Relation Insurance",
         "sentAt": "2026-02-14T14:40:33",
-        "status": "sent",
+        "status": "bounced",
         "category": "Insurance"
       },
       {
@@ -310,7 +310,7 @@
         "to": "opportunity@ignitevisibility.com",
         "company": "Ignite Visibility",
         "sentAt": "2026-02-14T14:47:30",
-        "status": "sent",
+        "status": "bounced",
         "category": "Marketing Agency"
       },
       {
@@ -366,7 +366,7 @@
         "to": "hello@thelasallenetwork.com",
         "company": "LaSalle Network",
         "sentAt": "2026-02-14T14:51:30",
-        "status": "sent",
+        "status": "bounced",
         "category": "Recruiting"
       }
     ]
