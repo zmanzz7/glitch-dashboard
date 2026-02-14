@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glitch Command Center ⚡</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0f172a;--card:#1e293b;--border:#334155;--text:#e2e8f0;--muted:#94a3b8;--blue:#2563eb;--green:#10b981;--orange:#f97316;--purple:#8b5cf6;--red:#ef4444;--yellow:#eab308}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+
+/* Top Bar */
+.topbar{background:linear-gradient(135deg,#1e293b 0%,#0f172a 100%);border-bottom:1px solid var(--border);padding:16px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px)}
+.topbar h1{font-size:22px;font-weight:700;background:linear-gradient(135deg,#60a5fa,#a78bfa,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.topbar-right{display:flex;gap:20px;align-items:center;font-size:13px;color:var(--muted)}
+.countdown{background:var(--red);color:#fff;padding:4px 12px;border-radius:20px;font-weight:600;font-size:13px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.7}}
+
+/* Layout */
+.container{max-width:1400px;margin:0 auto;padding:24px 32px}
+.section{margin-bottom:32px}
+.section-title{font-size:16px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+
+/* KPI Cards */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.kpi{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.kpi:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.kpi:nth-child(1)::before{background:var(--green)}.kpi:nth-child(2)::before{background:var(--blue)}.kpi:nth-child(3)::before{background:var(--orange)}.kpi:nth-child(4)::before{background:var(--purple)}
+.kpi-label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.kpi-value{font-size:36px;font-weight:700}
+.kpi-sub{font-size:13px;color:var(--muted);margin-top:4px}
+.progress-bar{height:6px;background:#334155;border-radius:3px;margin-top:12px;overflow:hidden}
+.progress-fill{height:100%;border-radius:3px;transition:width .6s ease}
+
+/* Revenue Breakdown */
+.rev-bars{display:flex;flex-direction:column;gap:12px}
+.rev-row{display:flex;align-items:center;gap:16px}
+.rev-label{width:140px;font-size:14px;font-weight:500;flex-shrink:0}
+.rev-track{flex:1;height:32px;background:#334155;border-radius:8px;overflow:hidden;position:relative}
+.rev-fill{height:100%;border-radius:8px;display:flex;align-items:center;padding-left:12px;font-size:13px;font-weight:600;min-width:fit-content;transition:width .6s ease}
+.rev-amount{width:80px;text-align:right;font-size:14px;font-weight:600;flex-shrink:0}
+
+/* Tables */
+table{width:100%;border-collapse:collapse}
+th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);padding:12px 16px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--card)}
+td{padding:12px 16px;border-bottom:1px solid rgba(51,65,85,.5);font-size:14px}
+tr:hover td{background:rgba(37,99,235,.05)}
+.table-wrap{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.table-scroll{max-height:400px;overflow-y:auto}
+
+/* Badges */
+.badge{padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.badge-live{background:rgba(16,185,129,.15);color:var(--green)}
+.badge-draft{background:rgba(234,179,8,.15);color:var(--yellow)}
+.badge-sent{background:rgba(37,99,235,.15);color:#60a5fa}
+.badge-bounced{background:rgba(239,68,68,.15);color:var(--red)}
+.badge-opened{background:rgba(139,92,246,.15);color:var(--purple)}
+.badge-replied{background:rgba(16,185,129,.15);color:var(--green)}
+
+/* Funnel */
+.funnel{display:flex;align-items:center;gap:0;margin-bottom:24px;justify-content:center}
+.funnel-step{text-align:center;padding:16px 24px;position:relative;flex:1}
+.funnel-num{font-size:28px;font-weight:700}
+.funnel-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+.funnel-arrow{color:var(--border);font-size:24px;flex-shrink:0}
+.funnel-bar{height:4px;border-radius:2px;margin-top:8px}
+
+/* Email Filters */
+.filters{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.filter-btn{padding:6px 14px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:12px;cursor:pointer;transition:all .2s}
+.filter-btn:hover,.filter-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+/* Timeline */
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:11px;top:0;bottom:0;width:2px;background:var(--border)}
+.tl-item{position:relative;margin-bottom:24px;padding-left:24px}
+.tl-dot{position:absolute;left:-25px;top:4px;width:14px;height:14px;border-radius:50%;border:2px solid var(--bg)}
+.tl-dot.milestone{background:var(--blue)}.tl-dot.setup{background:var(--muted)}.tl-dot.launch{background:var(--green)}.tl-dot.outreach{background:var(--orange)}
+.tl-time{font-size:12px;color:var(--muted);margin-bottom:2px}
+.tl-event{font-size:14px;font-weight:500}
+.tl-type{font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-left:8px}
+
+/* Goals */
+.goals-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.goal{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px}
+.goal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.goal-name{font-size:15px;font-weight:600}
+.goal-status{width:10px;height:10px;border-radius:50%}
+.goal-status.pending{background:var(--red)}.goal-status.in-progress{background:var(--yellow)}.goal-status.complete{background:var(--green)}
+
+/* Responsive */
+@media(max-width:900px){.kpi-grid{grid-template-columns:repeat(2,1fr)}.goals-grid{grid-template-columns:1fr}.funnel{flex-wrap:wrap}.topbar{flex-direction:column;gap:12px;text-align:center}.container{padding:16px}}
+@media(max-width:600px){.kpi-grid{grid-template-columns:1fr}}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--card)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>Glitch Command Center ⚡</h1>
+  <div class="topbar-right">
+    <span id="lastUpdated">Loading...</span>
+    <span class="countdown" id="countdown">— days left</span>
+  </div>
+</div>
+
+<div class="container">
+  <!-- KPIs -->
+  <div class="section">
+    <div class="section-title">📊 Key Metrics</div>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi-label">Total Revenue</div>
+        <div class="kpi-value" id="totalRev" style="color:var(--green)">$0</div>
+        <div class="kpi-sub" id="revSub">Across all channels</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Monthly Recurring Revenue</div>
+        <div class="kpi-value" id="mrrVal" style="color:var(--blue)">$0</div>
+        <div class="kpi-sub" id="mrrSub">0 clients · Target: $10,000</div>
+        <div class="progress-bar"><div class="progress-fill" id="mrrBar" style="width:0%;background:var(--blue)"></div></div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Email Outreach</div>
+        <div class="kpi-value" id="emailVal" style="color:var(--orange)">0</div>
+        <div class="kpi-sub" id="emailSub">0 delivered · 0 bounced</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Calls</div>
+        <div class="kpi-value" id="callsVal" style="color:var(--purple)">0</div>
+        <div class="kpi-sub" id="callsSub">0 completed</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Revenue Breakdown -->
+  <div class="section">
+    <div class="section-title">💰 Revenue Breakdown</div>
+    <div class="table-wrap" style="padding:24px">
+      <div class="rev-bars" id="revBars"></div>
+    </div>
+  </div>
+
+  <!-- Products -->
+  <div class="section">
+    <div class="section-title">📦 Products & Services</div>
+    <div class="table-wrap">
+      <table><thead><tr><th>Name</th><th>Platform</th><th>Price</th><th>Status</th><th>Sales</th><th>Revenue</th></tr></thead><tbody id="productsBody"></tbody></table>
+    </div>
+  </div>
+
+  <!-- Outreach Funnel -->
+  <div class="section">
+    <div class="section-title">📧 Email Outreach Pipeline</div>
+    <div class="table-wrap" style="padding:24px">
+      <div class="funnel" id="funnel"></div>
+    </div>
+  </div>
+
+  <!-- Email Log -->
+  <div class="section">
+    <div class="filters" id="filters"></div>
+    <div class="table-wrap">
+      <div class="table-scroll">
+        <table><thead><tr><th>Recipient</th><th>Company</th><th>Category</th><th>Sent</th><th>Status</th></tr></thead><tbody id="emailBody"></tbody></table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Timeline + Goals side by side -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <!-- Timeline -->
+    <div class="section">
+      <div class="section-title">📅 Timeline</div>
+      <div class="table-wrap" style="padding:24px;max-height:500px;overflow-y:auto">
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </div>
+
+    <!-- Goals -->
+    <div class="section">
+      <div class="section-title">🎯 Goals Tracker</div>
+      <div class="goals-grid" id="goals"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+let currentFilter = 'all';
+
+async function load() {
+  try {
+    const r = await fetch('data.json?' + Date.now());
+    const d = await r.json();
+    render(d);
+  } catch(e) { console.error('Failed to load data:', e); }
+}
+
+function fmt$(n) { return '$' + Number(n).toLocaleString(); }
+function fmtTime(s) {
+  const d = new Date(s);
+  return d.toLocaleTimeString('en-US', {hour:'numeric',minute:'2-digit',hour12:true});
+}
+
+function render(d) {
+  // Top bar
+  const lu = new Date(d.lastUpdated);
+  document.getElementById('lastUpdated').textContent = 'Updated: ' + lu.toLocaleString();
+  const deadline = new Date(d.goals.deadline);
+  const now = new Date();
+  const days = Math.max(0, Math.ceil((deadline - now) / 86400000));
+  document.getElementById('countdown').textContent = days + ' days left';
+
+  // KPIs
+  document.getElementById('totalRev').textContent = fmt$(d.revenue.total);
+  document.getElementById('mrrVal').textContent = fmt$(d.mrr.current);
+  document.getElementById('mrrSub').textContent = d.mrr.clients + ' clients · Target: ' + fmt$(d.mrr.target);
+  const mrrPct = Math.min(100, (d.mrr.current / d.mrr.target) * 100);
+  document.getElementById('mrrBar').style.width = Math.max(mrrPct, 2) + '%';
+
+  document.getElementById('emailVal').textContent = d.outreach.totalSent + ' sent';
+  document.getElementById('emailSub').textContent = (d.outreach.delivered - d.outreach.bounced) + ' delivered · ' + d.outreach.bounced + ' bounced';
+
+  document.getElementById('callsVal').textContent = d.outreach.callsBooked + ' booked';
+  document.getElementById('callsSub').textContent = d.outreach.callsCompleted + ' completed';
+
+  // Revenue bars
+  const maxRev = Math.max(1, ...d.revenue.breakdown.map(r => r.amount));
+  document.getElementById('revBars').innerHTML = d.revenue.breakdown.map(r => {
+    const pct = maxRev > 0 ? Math.max((r.amount / maxRev) * 100, r.amount > 0 ? 8 : 2) : 2;
+    return `<div class="rev-row">
+      <div class="rev-label"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${r.color};margin-right:8px"></span>${r.source}</div>
+      <div class="rev-track"><div class="rev-fill" style="width:${pct}%;background:${r.color}">${r.amount > 0 ? fmt$(r.amount) : ''}</div></div>
+      <div class="rev-amount">${fmt$(r.amount)}</div>
+    </div>`;
+  }).join('');
+
+  // Products
+  document.getElementById('productsBody').innerHTML = d.products.map(p => {
+    const isLive = p.status === 'live';
+    const badge = isLive ? 'badge-live' : 'badge-draft';
+    const price = typeof p.price === 'number' ? fmt$(p.price) : p.price;
+    return `<tr>
+      <td><a href="${p.url}" target="_blank">${p.name}</a></td>
+      <td>${p.platform}</td>
+      <td>${price}</td>
+      <td><span class="badge ${badge}">${p.status}</span></td>
+      <td>${p.sales}</td>
+      <td>${fmt$(p.revenue)}</td>
+    </tr>`;
+  }).join('');
+
+  // Funnel
+  const steps = [
+    {label:'Sent', val:d.outreach.totalSent, color:var='var(--blue)'},
+    {label:'Delivered', val:d.outreach.delivered - d.outreach.bounced, color:'var(--blue)'},
+    {label:'Opened', val:d.outreach.opened, color:'var(--purple)'},
+    {label:'Replied', val:d.outreach.replied, color:'var(--orange)'},
+    {label:'Calls Booked', val:d.outreach.callsBooked, color:'var(--green)'}
+  ];
+  document.getElementById('funnel').innerHTML = steps.map((s,i) => {
+    const pct = steps[0].val > 0 ? (s.val / steps[0].val * 100) : 0;
+    return (i > 0 ? '<div class="funnel-arrow">→</div>' : '') +
+      `<div class="funnel-step"><div class="funnel-num" style="color:${s.color}">${s.val}</div><div class="funnel-label">${s.label}</div><div class="funnel-bar" style="background:${s.color};opacity:.3;width:${Math.max(pct,5)}%"></div></div>`;
+  }).join('');
+
+  // Filters
+  const cats = ['all', ...new Set(d.outreach.emails.map(e => e.category))];
+  document.getElementById('filters').innerHTML = cats.map(c =>
+    `<button class="filter-btn ${c===currentFilter?'active':''}" onclick="setFilter('${c}')">${c === 'all' ? '🔍 All' : c}</button>`
+  ).join('');
+
+  // Email log
+  const filtered = currentFilter === 'all' ? d.outreach.emails : d.outreach.emails.filter(e => e.category === currentFilter);
+  document.getElementById('emailBody').innerHTML = filtered.map(e => {
+    const bc = e.status === 'bounced' ? 'badge-bounced' : e.status === 'opened' ? 'badge-opened' : e.status === 'replied' ? 'badge-replied' : 'badge-sent';
+    return `<tr><td style="font-size:13px;color:var(--muted)">${e.to}</td><td>${e.company}</td><td><span style="font-size:12px;color:var(--muted)">${e.category}</span></td><td style="font-size:13px">${fmtTime(e.sentAt)}</td><td><span class="badge ${bc}">${e.status}</span></td></tr>`;
+  }).join('');
+
+  // Timeline
+  document.getElementById('timeline').innerHTML = d.timeline.map(t => {
+    return `<div class="tl-item"><div class="tl-dot ${t.type}"></div><div class="tl-time">${t.date}</div><div class="tl-event">${t.event}<span class="tl-type badge badge-${t.type === 'launch' ? 'live' : t.type === 'outreach' ? 'sent' : t.type === 'milestone' ? 'live' : 'draft'}" style="margin-left:8px">${t.type}</span></div></div>`;
+  }).join('');
+
+  // Goals
+  document.getElementById('goals').innerHTML = d.goals.targets.map(g => {
+    const sc = g.status === 'complete' ? 'complete' : g.status === 'in-progress' ? 'in-progress' : 'pending';
+    return `<div class="goal"><div class="goal-header"><div class="goal-name">${g.name}</div><div class="goal-status ${sc}"></div></div><div class="progress-bar"><div class="progress-fill" style="width:${g.status==='complete'?100:g.status==='in-progress'?50:0}%;background:${g.status==='complete'?'var(--green)':g.status==='in-progress'?'var(--yellow)':'var(--red)'}"></div></div><div style="font-size:12px;color:var(--muted);margin-top:8px">${g.status.toUpperCase()} · Target: ${typeof g.target==='number'&&g.target>1?fmt$(g.target):g.target}</div></div>`;
+  }).join('');
+}
+
+function setFilter(f) { currentFilter = f; load(); }
+
+load();
+setInterval(load, 60000);
+</script>
+</body>
+</html>
