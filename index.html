@@ -223,7 +223,7 @@ function render(d) {
   document.getElementById('mrrBar').style.width = Math.max(mrrPct, 2) + '%';
 
   document.getElementById('emailVal').textContent = d.outreach.totalSent + ' sent';
-  document.getElementById('emailSub').textContent = (d.outreach.delivered - d.outreach.bounced) + ' delivered · ' + d.outreach.bounced + ' bounced';
+  document.getElementById('emailSub').textContent = d.outreach.delivered + ' delivered · ' + d.outreach.bounced + ' bounced';
 
   document.getElementById('callsVal').textContent = d.outreach.callsBooked + ' booked';
   document.getElementById('callsSub').textContent = d.outreach.callsCompleted + ' completed';
@@ -257,7 +257,7 @@ function render(d) {
   // Funnel
   const steps = [
     {label:'Sent', val:d.outreach.totalSent, color:'var(--blue)'},
-    {label:'Delivered', val:d.outreach.delivered - d.outreach.bounced, color:'var(--blue)'},
+    {label:'Delivered', val:d.outreach.delivered, color:'var(--blue)'},
     {label:'Opened', val:d.outreach.opened, color:'var(--purple)'},
     {label:'Replied', val:d.outreach.replied, color:'var(--orange)'},
     {label:'Calls Booked', val:d.outreach.callsBooked, color:'var(--green)'}
