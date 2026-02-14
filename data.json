@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-14T14:59:00",
+  "lastUpdated": "2026-02-14T15:10:00",
   "revenue": {
     "total": 0,
     "gumroad": 0,
@@ -62,6 +62,24 @@
       "price": "497-2497/mo",
       "status": "live",
       "url": "https://ai.zachary-aronwald.com",
+      "sales": 0,
+      "revenue": 0
+    },
+    {
+      "name": "AI Automation Audit (Lead Magnet)",
+      "platform": "Website",
+      "price": "Free",
+      "status": "live",
+      "url": "https://ai.zachary-aronwald.com/audit",
+      "sales": 0,
+      "revenue": 0
+    },
+    {
+      "name": "AI Chatbot Demo",
+      "platform": "Website",
+      "price": "Free",
+      "status": "live",
+      "url": "https://ai.zachary-aronwald.com/demo",
       "sales": 0,
       "revenue": 0
     }
@@ -436,6 +454,16 @@
       "date": "2026-02-14 14:51",
       "event": "Batch 3 sent (10 verified emails \u2014 agencies & recruiting)",
       "type": "outreach"
+    },
+    {
+      "date": "2026-02-14 15:08",
+      "event": "AI Automation Audit lead magnet deployed",
+      "type": "launch"
+    },
+    {
+      "date": "2026-02-14 15:08",
+      "event": "Follow-up emails scheduled (Day 3: Tue, Day 7: Fri)",
+      "type": "setup"
     }
   ],
   "goals": {
