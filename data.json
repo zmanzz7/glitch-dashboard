@@ -17,14 +17,14 @@
     {"name": "500 ChatGPT Prompts", "platform": "Gumroad", "price": 7, "status": "live", "url": "https://glitchar.gumroad.com/l/500-chatgpt-prompts", "sales": 0, "revenue": 0},
     {"name": "AI Side Hustle Blueprint", "platform": "Gumroad", "price": 14, "status": "live", "url": "https://glitchar.gumroad.com/l/iqszs", "sales": 0, "revenue": 0},
     {"name": "Web Scraping Toolkit", "platform": "Gumroad", "price": 12, "status": "live", "url": "https://glitchar.gumroad.com/l/wkahgu", "sales": 0, "revenue": 0},
-    {"name": "Email Marketing Playbook", "platform": "Gumroad", "price": 11, "status": "writing", "url": "", "sales": 0, "revenue": 0},
+    {"name": "Email Marketing Playbook", "platform": "Gumroad", "price": 11, "status": "live", "url": "https://glitchar.gumroad.com/l/ineokv", "sales": 0, "revenue": 0},
     {"name": "Python Automation Gig", "platform": "Fiverr", "price": 10, "status": "draft (W9 pending)", "url": "https://fiverr.com/glitcharonwald", "sales": 0, "revenue": 0},
     {"name": "NexusAI Agency", "platform": "Website", "price": "497-2497/mo", "status": "live", "url": "https://ai.zachary-aronwald.com", "sales": 0, "revenue": 0}
   ],
   "outreach": {
-    "totalSent": 60,
-    "delivered": 42,
-    "bounced": 18,
+    "totalSent": 107,
+    "delivered": 83,
+    "bounced": 22,
     "opened": 0,
     "replied": 1,
     "callsBooked": 0,
