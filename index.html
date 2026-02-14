@@ -100,6 +100,34 @@ tr:hover td{background:rgba(37,99,235,.05)}
 </head>
 <body>
 
+<!-- Password Gate -->
+<div id="authGate" style="display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0f172a;">
+<div style="background:#1e293b;border:1px solid #334155;border-radius:16px;padding:48px 40px;text-align:center;max-width:400px;width:90%;">
+<h1 style="font-size:28px;font-weight:700;margin-bottom:8px;background:linear-gradient(135deg,#60a5fa,#a78bfa,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Glitch Command Center ⚡</h1>
+<p style="color:#94a3b8;margin-bottom:24px;font-size:14px;">Enter password to access the dashboard</p>
+<form id="authForm" style="display:flex;flex-direction:column;gap:12px;">
+<input type="password" id="authPass" placeholder="Password" style="padding:12px 16px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:16px;outline:none;text-align:center;" autofocus>
+<button type="submit" style="padding:12px;border-radius:8px;background:#2563eb;color:white;font-weight:600;font-size:15px;border:none;cursor:pointer;">Enter</button>
+<p id="authError" style="color:#ef4444;font-size:13px;display:none;">Wrong password. Try again.</p>
+</form>
+</div>
+</div>
+<script>
+(function(){
+var hash='48b589de86abc4cfba508a73c6b821a8b10f830206dd82832663474b8adc6194';
+function sha256(s){return crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)).then(function(b){return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('')});}
+if(sessionStorage.getItem('authed')==='1'){document.getElementById('authGate').style.display='none';document.getElementById('dashboard').style.display='block';}
+document.getElementById('authForm').addEventListener('submit',function(e){
+e.preventDefault();
+sha256(document.getElementById('authPass').value).then(function(h){
+if(h===hash){sessionStorage.setItem('authed','1');document.getElementById('authGate').style.display='none';document.getElementById('dashboard').style.display='block';}
+else{document.getElementById('authError').style.display='block';}
+});
+});
+})();
+</script>
+
+<div id="dashboard" style="display:none;">
 <div class="topbar">
   <h1>Glitch Command Center ⚡</h1>
   <div class="topbar-right">
@@ -298,5 +326,6 @@ function setFilter(f) { currentFilter = f; load(); }
 load();
 setInterval(load, 60000);
 </script>
+</div><!-- end #dashboard -->
 </body>
 </html>
