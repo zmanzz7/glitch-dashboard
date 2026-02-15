@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-14T20:00:00",
+  "lastUpdated": "2026-02-15T12:36:00",
   "revenue": {
     "total": 0,
     "gumroad": 0,
@@ -94,8 +94,8 @@
     }
   ],
   "outreach": {
-    "totalSent": 107,
-    "delivered": 83,
+    "totalSent": 137,
+    "delivered": 113,
     "bounced": 22,
     "opened": 0,
     "replied": 1,
