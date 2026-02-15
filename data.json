@@ -101,6 +101,11 @@
     "replied": 1,
     "callsBooked": 0,
     "callsCompleted": 0,
+    "provider": "sendgrid",
+    "sendgridDomain": "zachary-aronwald.com",
+    "fromEmail": "zach@zachary-aronwald.com",
+    "replyTo": "zaronwald@gmail.com",
+    "dailyLimit": 100,
     "emails": []
   },
   "reddit": {

@@ -156,6 +156,7 @@ else{document.getElementById('authError').style.display='block';}
         <div class="kpi-label">Email Outreach</div>
         <div class="kpi-value" id="emailVal" style="color:var(--orange)">0</div>
         <div class="kpi-sub" id="emailSub">0 delivered · 0 bounced</div>
+        <div class="kpi-sub" id="emailProvider" style="margin-top:4px;font-size:11px"></div>
       </div>
       <div class="kpi">
         <div class="kpi-label">Calls</div>
@@ -252,6 +253,12 @@ function render(d) {
 
   document.getElementById('emailVal').textContent = d.outreach.totalSent + ' sent';
   document.getElementById('emailSub').textContent = d.outreach.delivered + ' delivered · ' + d.outreach.bounced + ' bounced';
+  var provEl = document.getElementById('emailProvider');
+  if (d.outreach.provider) {
+    var provName = d.outreach.provider === 'sendgrid' ? '📨 SendGrid' : d.outreach.provider === 'gmail' ? '📧 Gmail SMTP' : d.outreach.provider;
+    provEl.textContent = 'via ' + provName + (d.outreach.sendgridDomain ? ' (' + d.outreach.fromEmail + ')' : '');
+    provEl.style.color = d.outreach.provider === 'sendgrid' ? 'var(--green)' : 'var(--muted)';
+  }
 
   document.getElementById('callsVal').textContent = d.outreach.callsBooked + ' booked';
   document.getElementById('callsSub').textContent = d.outreach.callsCompleted + ' completed';
