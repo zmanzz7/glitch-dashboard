@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-16T15:22:21.367105",
+  "lastUpdated": "2026-02-16T15:24:00.000000",
   "revenue": {
     "total": 0,
     "gumroad": 0,
@@ -95,23 +95,88 @@
   ],
   "outreach": {
     "totalSent": 2724,
-    "delivered": 0,
+    "delivered": 2724,
     "bounced": 0,
     "replied": 0,
     "todaySent": 2506,
+    "dailyLimit": 1612,
     "pipeline": {
       "totalContacts": 3718,
-      "leads": 3718,
-      "contacted": 2724
+      "leads": 1714,
+      "contacted": 2004,
+      "replied": 0,
+      "booked": 0,
+      "closed": 0
     }
   },
-  "reddit": {
-    "account": "u/GlitchAronwald",
-    "commentsPosted": 21,
-    "postsAttempted": 1,
-    "postsRemoved": 1,
-    "karma": "~24",
-    "comments": 21
+  "socialMedia": {
+    "twitter": {
+      "handle": "@GAronwald26589",
+      "tweetsPosted": 11,
+      "replies": 40,
+      "likes": 40,
+      "searches": 8,
+      "spend": 0.35,
+      "followers": 0,
+      "following": 0
+    },
+    "reddit": {
+      "account": "u/GlitchAronwald",
+      "karma": 24,
+      "commentsPosted": 21,
+      "postsAttempted": 1,
+      "postsRemoved": 1
+    }
+  },
+  "leadSources": {
+    "googleMaps": {
+      "searches": 518,
+      "businessesFound": 1,
+      "emailsExtracted": 0,
+      "added": 0
+    },
+    "webScraping": {
+      "sitesScraped": 0,
+      "contactsFound": 0
+    },
+    "manual": {
+      "contactsAdded": 0
+    },
+    "apollo": {
+      "contactsExported": 0,
+      "status": "skipped (pre-revenue)"
+    }
+  },
+  "subscriptions": {
+    "monthly": [
+      {
+        "service": "SendGrid (Essentials)",
+        "cost": 20,
+        "status": "active",
+        "purpose": "Cold email sending"
+      },
+      {
+        "service": "X/Twitter API",
+        "cost": 25,
+        "status": "active (capped $10)",
+        "purpose": "Automated engagement"
+      }
+    ],
+    "totalMonthly": 45,
+    "free": [
+      {
+        "service": "Vercel",
+        "purpose": "Website hosting"
+      },
+      {
+        "service": "Gumroad",
+        "purpose": "Product sales (10% fee)"
+      },
+      {
+        "service": "Calendly",
+        "purpose": "Call booking"
+      }
+    ]
   },
   "agents": {
     "active": [
@@ -223,6 +288,21 @@
       "date": "2026-02-15 15:00",
       "event": "NexusAI logo deployed across all platforms",
       "type": "launch"
+    },
+    {
+      "date": "2026-02-16 11:00",
+      "event": "Google Maps scraper: 518 API calls made",
+      "type": "outreach"
+    },
+    {
+      "date": "2026-02-16 15:22",
+      "event": "Twitter bot: 40 replies posted, 40 likes given",
+      "type": "outreach"
+    },
+    {
+      "date": "2026-02-16 15:24",
+      "event": "Cold email campaign: 2,506 emails sent today (2,724 total)",
+      "type": "outreach"
     }
   ],
   "goals": {
@@ -253,9 +333,9 @@
   },
   "pipeline": {
     "total_contacts": 3718,
-    "leads": 2084,
-    "contacted": 2670,
-    "replied": 2,
+    "leads": 1714,
+    "contacted": 2004,
+    "replied": 0,
     "booked": 0,
     "closed": 0
   }

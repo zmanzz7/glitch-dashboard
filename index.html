@@ -166,6 +166,48 @@ else{document.getElementById('authError').style.display='block';}
     </div>
   </div>
 
+  <!-- Social Media Stats -->
+  <div class="section">
+    <div class="section-title">🐦 Social Media Outreach</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="table-wrap" style="padding:24px">
+        <h3 style="font-size:16px;font-weight:600;margin-bottom:16px;color:var(--blue)">Twitter / X</h3>
+        <div id="twitterStats" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px"></div>
+      </div>
+      <div class="table-wrap" style="padding:24px">
+        <h3 style="font-size:16px;font-weight:600;margin-bottom:16px;color:var(--orange)">Reddit</h3>
+        <div id="redditStats" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lead Sources -->
+  <div class="section">
+    <div class="section-title">🔍 Lead Sources</div>
+    <div class="table-wrap">
+      <table><thead><tr><th>Source</th><th>Searches/Scrapes</th><th>Businesses Found</th><th>Emails Extracted</th><th>Added to CRM</th><th>Status</th></tr></thead><tbody id="leadSourcesBody"></tbody></table>
+    </div>
+  </div>
+
+  <!-- Subscriptions -->
+  <div class="section">
+    <div class="section-title">💳 Subscriptions & Costs</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div class="table-wrap" style="padding:24px">
+        <h3 style="font-size:16px;font-weight:600;margin-bottom:16px;color:var(--green)">Monthly Subscriptions</h3>
+        <div id="monthlySubsBody" style="display:flex;flex-direction:column;gap:12px"></div>
+        <div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);display:flex;justify-content:space-between;font-weight:600;font-size:16px">
+          <span>Total Monthly:</span>
+          <span id="totalMonthlyCost" style="color:var(--orange)">$0</span>
+        </div>
+      </div>
+      <div class="table-wrap" style="padding:24px">
+        <h3 style="font-size:16px;font-weight:600;margin-bottom:16px;color:var(--blue)">Free Services</h3>
+        <div id="freeSubsBody" style="display:flex;flex-direction:column;gap:12px"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- Revenue Breakdown -->
   <div class="section">
     <div class="section-title">💰 Revenue Breakdown</div>
@@ -252,16 +294,82 @@ function render(d) {
   document.getElementById('mrrBar').style.width = Math.max(mrrPct, 2) + '%';
 
   document.getElementById('emailVal').textContent = d.outreach.totalSent + ' sent';
-  document.getElementById('emailSub').textContent = d.outreach.delivered + ' delivered · ' + d.outreach.bounced + ' bounced';
+  const dailyLimitText = d.outreach.dailyLimit ? ` (${d.outreach.todaySent}/${d.outreach.dailyLimit} today)` : '';
+  document.getElementById('emailSub').textContent = d.outreach.delivered + ' delivered · ' + d.outreach.bounced + ' bounced' + dailyLimitText;
   var provEl = document.getElementById('emailProvider');
   if (d.outreach.provider) {
     var provName = d.outreach.provider === 'sendgrid' ? '📨 SendGrid' : d.outreach.provider === 'gmail' ? '📧 Gmail SMTP' : d.outreach.provider;
     provEl.textContent = 'via ' + provName + (d.outreach.sendgridDomain ? ' (' + d.outreach.fromEmail + ')' : '');
     provEl.style.color = d.outreach.provider === 'sendgrid' ? 'var(--green)' : 'var(--muted)';
+  } else {
+    provEl.textContent = '📨 SendGrid';
+    provEl.style.color = 'var(--green)';
   }
 
-  document.getElementById('callsVal').textContent = d.outreach.callsBooked + ' booked';
-  document.getElementById('callsSub').textContent = d.outreach.callsCompleted + ' completed';
+  document.getElementById('callsVal').textContent = (d.outreach.callsBooked || 0) + ' booked';
+  document.getElementById('callsSub').textContent = (d.outreach.callsCompleted || 0) + ' completed';
+
+  // Social Media Stats
+  if (d.socialMedia) {
+    const tw = d.socialMedia.twitter;
+    document.getElementById('twitterStats').innerHTML = `
+      <div><div style="font-size:13px;color:var(--muted);margin-bottom:4px">Replies Posted</div><div style="font-size:24px;font-weight:700;color:var(--blue)">${tw.replies}</div></div>
+      <div><div style="font-size:13px;color:var(--muted);margin-bottom:4px">Likes Given</div><div style="font-size:24px;font-weight:700;color:var(--blue)">${tw.likes}</div></div>
+      <div><div style="font-size:13px;color:var(--muted);margin-bottom:4px">Searches Run</div><div style="font-size:24px;font-weight:700;color:var(--blue)">${tw.searches}</div></div>
+      <div><div style="font-size:13px;color:var(--muted);margin-bottom:4px">API Spend</div><div style="font-size:24px;font-weight:700;color:var(--green)">$${tw.spend.toFixed(2)}</div></div>
+    `;
+    
+    const rd = d.socialMedia.reddit;
+    document.getElementById('redditStats').innerHTML = `
+      <div><div style="font-size:13px;color:var(--muted);margin-bottom:4px">Karma</div><div style="font-size:24px;font-weight:700;color:var(--orange)">${rd.karma}</div></div>
+      <div><div style="font-size:13px;color:var(--muted);margin-bottom:4px">Comments</div><div style="font-size:24px;font-weight:700;color:var(--orange)">${rd.commentsPosted}</div></div>
+      <div><div style="font-size:13px;color:var(--muted);margin-bottom:4px">Posts</div><div style="font-size:24px;font-weight:700;color:var(--orange)">${rd.postsAttempted}</div></div>
+      <div><div style="font-size:13px;color:var(--muted);margin-bottom:4px">Removed</div><div style="font-size:24px;font-weight:700;color:var(--red)">${rd.postsRemoved}</div></div>
+    `;
+  }
+
+  // Lead Sources
+  if (d.leadSources) {
+    const sources = [
+      {name: 'Google Maps API', ...d.leadSources.googleMaps},
+      {name: 'Web Scraping', ...d.leadSources.webScraping, searches: d.leadSources.webScraping.sitesScraped, businessesFound: d.leadSources.webScraping.contactsFound, emailsExtracted: '-'},
+      {name: 'Manual Entry', ...d.leadSources.manual, searches: '-', businessesFound: '-', emailsExtracted: '-', added: d.leadSources.manual.contactsAdded},
+      {name: 'Apollo.io', ...d.leadSources.apollo, searches: '-', businessesFound: '-', emailsExtracted: '-', added: d.leadSources.apollo.contactsExported}
+    ];
+    
+    document.getElementById('leadSourcesBody').innerHTML = sources.map(s => {
+      const statusColor = s.status && s.status.includes('skipped') ? 'var(--muted)' : s.added > 0 ? 'var(--green)' : 'var(--blue)';
+      return `<tr>
+        <td style="font-weight:600">${s.name}</td>
+        <td>${s.searches || 0}</td>
+        <td>${s.businessesFound || 0}</td>
+        <td>${s.emailsExtracted || 0}</td>
+        <td style="font-weight:600;color:${statusColor}">${s.added || 0}</td>
+        <td style="font-size:12px;color:var(--muted)">${s.status || 'active'}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  // Subscriptions
+  if (d.subscriptions) {
+    document.getElementById('monthlySubsBody').innerHTML = d.subscriptions.monthly.map(s => {
+      const statusColor = s.status.includes('active') ? 'var(--green)' : 'var(--muted)';
+      return `<div style="display:flex;justify-content:space-between;align-items:center;padding:12px;background:rgba(37,99,235,.05);border-radius:8px">
+        <div><div style="font-weight:600;margin-bottom:2px">${s.service}</div><div style="font-size:12px;color:var(--muted)">${s.purpose}</div></div>
+        <div style="text-align:right"><div style="font-size:18px;font-weight:700;color:var(--orange)">$${s.cost}/mo</div><div style="font-size:11px;color:${statusColor};text-transform:uppercase;margin-top:2px">${s.status}</div></div>
+      </div>`;
+    }).join('');
+    
+    document.getElementById('totalMonthlyCost').textContent = fmt$(d.subscriptions.totalMonthly);
+    
+    document.getElementById('freeSubsBody').innerHTML = d.subscriptions.free.map(s => {
+      return `<div style="padding:12px;background:rgba(16,185,129,.05);border-radius:8px">
+        <div style="font-weight:600;margin-bottom:2px">${s.service}</div>
+        <div style="font-size:12px;color:var(--muted)">${s.purpose}</div>
+        <div style="font-size:11px;color:var(--green);text-transform:uppercase;margin-top:4px">FREE</div>
+      </div>`;
+    }).join('');
+  }
 
   // Revenue bars
   const maxRev = Math.max(1, ...d.revenue.breakdown.map(r => r.amount));
@@ -293,9 +401,9 @@ function render(d) {
   const steps = [
     {label:'Sent', val:d.outreach.totalSent, color:'var(--blue)'},
     {label:'Delivered', val:d.outreach.delivered, color:'var(--blue)'},
-    {label:'Opened', val:d.outreach.opened, color:'var(--purple)'},
+    {label:'Opened', val:d.outreach.opened || 0, color:'var(--purple)'},
     {label:'Replied', val:d.outreach.replied, color:'var(--orange)'},
-    {label:'Calls Booked', val:d.outreach.callsBooked, color:'var(--green)'}
+    {label:'Calls Booked', val:d.outreach.callsBooked || 0, color:'var(--green)'}
   ];
   document.getElementById('funnel').innerHTML = steps.map((s,i) => {
     const pct = steps[0].val > 0 ? (s.val / steps[0].val * 100) : 0;
@@ -304,17 +412,22 @@ function render(d) {
   }).join('');
 
   // Filters
-  const cats = ['all', ...new Set(d.outreach.emails.map(e => e.category))];
-  document.getElementById('filters').innerHTML = cats.map(c =>
-    `<button class="filter-btn ${c===currentFilter?'active':''}" onclick="setFilter('${c}')">${c === 'all' ? '🔍 All' : c}</button>`
-  ).join('');
+  if (d.outreach.emails && d.outreach.emails.length > 0) {
+    const cats = ['all', ...new Set(d.outreach.emails.map(e => e.category))];
+    document.getElementById('filters').innerHTML = cats.map(c =>
+      `<button class="filter-btn ${c===currentFilter?'active':''}" onclick="setFilter('${c}')">${c === 'all' ? '🔍 All' : c}</button>`
+    ).join('');
 
-  // Email log
-  const filtered = currentFilter === 'all' ? d.outreach.emails : d.outreach.emails.filter(e => e.category === currentFilter);
-  document.getElementById('emailBody').innerHTML = filtered.map(e => {
-    const bc = e.status === 'bounced' ? 'badge-bounced' : e.status === 'opened' ? 'badge-opened' : e.status === 'replied' ? 'badge-replied' : 'badge-sent';
-    return `<tr><td style="font-size:13px;color:var(--muted)">${e.to}</td><td>${e.company}</td><td><span style="font-size:12px;color:var(--muted)">${e.category}</span></td><td style="font-size:13px">${fmtTime(e.sentAt)}</td><td><span class="badge ${bc}">${e.status}</span></td></tr>`;
-  }).join('');
+    // Email log
+    const filtered = currentFilter === 'all' ? d.outreach.emails : d.outreach.emails.filter(e => e.category === currentFilter);
+    document.getElementById('emailBody').innerHTML = filtered.map(e => {
+      const bc = e.status === 'bounced' ? 'badge-bounced' : e.status === 'opened' ? 'badge-opened' : e.status === 'replied' ? 'badge-replied' : 'badge-sent';
+      return `<tr><td style="font-size:13px;color:var(--muted)">${e.to}</td><td>${e.company}</td><td><span style="font-size:12px;color:var(--muted)">${e.category}</span></td><td style="font-size:13px">${fmtTime(e.sentAt)}</td><td><span class="badge ${bc}">${e.status}</span></td></tr>`;
+    }).join('');
+  } else {
+    document.getElementById('filters').innerHTML = '<div style="color:var(--muted);font-size:14px">No detailed email log available yet</div>';
+    document.getElementById('emailBody').innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:32px">Email tracking coming soon</td></tr>';
+  }
 
   // Timeline
   document.getElementById('timeline').innerHTML = d.timeline.map(t => {
