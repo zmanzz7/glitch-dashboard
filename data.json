@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-16T14:22:31.509020",
+  "lastUpdated": "2026-02-16T14:52:27.638102",
   "revenue": {
     "total": 0,
     "gumroad": 0,
@@ -94,7 +94,7 @@
     }
   ],
   "outreach": {
-    "totalSent": 2109,
+    "totalSent": 2670,
     "delivered": 1995,
     "bounced": 114,
     "opened": 0,
@@ -257,7 +257,7 @@
   "pipeline": {
     "total_contacts": 3718,
     "leads": 2084,
-    "contacted": 1604,
+    "contacted": 2670,
     "replied": 2,
     "booked": 0,
     "closed": 0
