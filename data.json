@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-16T15:24:00.000000",
+  "lastUpdated": "2026-02-16T15:52:31.839493",
   "revenue": {
     "total": 0,
     "gumroad": 0,
@@ -98,16 +98,7 @@
     "delivered": 2724,
     "bounced": 0,
     "replied": 0,
-    "todaySent": 2506,
-    "dailyLimit": 1612,
-    "pipeline": {
-      "totalContacts": 3718,
-      "leads": 1714,
-      "contacted": 2004,
-      "replied": 0,
-      "booked": 0,
-      "closed": 0
-    }
+    "todaySent": 2506
   },
   "socialMedia": {
     "twitter": {
@@ -332,11 +323,9 @@
     ]
   },
   "pipeline": {
-    "total_contacts": 3718,
-    "leads": 1714,
-    "contacted": 2004,
-    "replied": 0,
-    "booked": 0,
-    "closed": 0
+    "totalContacts": 3718,
+    "contacted": 2724,
+    "leads": 0,
+    "replied": 0
   }
 }
