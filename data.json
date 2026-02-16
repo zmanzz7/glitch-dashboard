@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-16T12:51:50.737262",
+  "lastUpdated": "2026-02-16T13:52:36.299397",
   "revenue": {
     "total": 0,
     "gumroad": 0,
@@ -230,7 +230,7 @@
   ],
   "goals": {
     "deadline": "2026-02-21",
-    "daysRemaining": 6,
+    "daysRemaining": 5,
     "targets": [
       {
         "name": "First Dollar",
@@ -255,8 +255,8 @@
     ]
   },
   "pipeline": {
-    "total_contacts": 3619,
-    "leads": 2015,
+    "total_contacts": 3688,
+    "leads": 2084,
     "contacted": 1604,
     "replied": 2,
     "booked": 0,
