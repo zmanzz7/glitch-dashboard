@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-16T14:52:27.638102",
+  "lastUpdated": "2026-02-16T15:22:21.367105",
   "revenue": {
     "total": 0,
     "gumroad": 0,
@@ -94,19 +94,16 @@
     }
   ],
   "outreach": {
-    "totalSent": 2670,
-    "delivered": 1995,
-    "bounced": 114,
-    "opened": 0,
-    "replied": 2,
-    "callsBooked": 0,
-    "callsCompleted": 0,
-    "provider": "sendgrid",
-    "sendgridDomain": "zachary-aronwald.com",
-    "fromEmail": "zach@zachary-aronwald.com",
-    "replyTo": "zaronwald@gmail.com",
-    "dailyLimit": 100,
-    "emails": []
+    "totalSent": 2724,
+    "delivered": 0,
+    "bounced": 0,
+    "replied": 0,
+    "todaySent": 2506,
+    "pipeline": {
+      "totalContacts": 3718,
+      "leads": 3718,
+      "contacted": 2724
+    }
   },
   "reddit": {
     "account": "u/GlitchAronwald",
