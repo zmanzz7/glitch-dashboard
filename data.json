@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-16T23:22:14.687715",
+  "lastUpdated": "2026-02-16T23:52:11.068325",
   "revenue": {
     "total": 0,
     "gumroad": 0,
@@ -336,8 +336,8 @@
   "bounced": 0,
   "replied": 0,
   "pipelineContacts": 3718,
-  "pipelineLeads": 1714,
-  "pipelineContacted": 2004,
+  "pipelineLeads": 0,
+  "pipelineContacted": 0,
   "pipelineReplied": 0,
   "todaySent": 2690,
   "updatedAt": "2026-02-16T19:52:40.348391",
