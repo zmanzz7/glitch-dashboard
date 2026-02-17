@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-16T19:22:25.475171",
+  "lastUpdated": "2026-02-16T19:52:43.124259",
   "revenue": {
     "total": 0,
     "gumroad": 0,
@@ -299,7 +299,7 @@
   ],
   "goals": {
     "deadline": "2026-02-21",
-    "daysRemaining": 5,
+    "daysRemaining": 4,
     "targets": [
       {
         "name": "First Dollar",
@@ -337,7 +337,7 @@
   "pipelineContacted": 2004,
   "pipelineReplied": 0,
   "todaySent": 2690,
-  "updatedAt": "2026-02-16T17:52:47.398407",
+  "updatedAt": "2026-02-16T19:52:40.348391",
   "totalContacts": 3718,
   "email": {
     "totalSent": 2908,
