@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-16T18:22:28.414481",
+  "lastUpdated": "2026-02-16T18:52:22.259132",
   "revenue": {
     "total": 0,
     "gumroad": 0,
@@ -95,10 +95,11 @@
   ],
   "outreach": {
     "totalSent": 2908,
-    "delivered": 2707,
+    "delivered": 0,
     "bounced": 0,
     "replied": 0,
-    "todaySent": 2690
+    "todaySent": 2690,
+    "dailyCap": 1612
   },
   "socialMedia": {
     "twitter": {
@@ -324,9 +325,8 @@
   },
   "pipeline": {
     "totalContacts": 3718,
-    "contacted": 2004,
-    "leads": 1714,
-    "replied": 0
+    "deals": 3718,
+    "interactions": 1345
   },
   "totalSent": 2908,
   "delivered": 0,
