@@ -1,24 +1,24 @@
 {
-  "lastUpdated": "2026-02-17T18:22:24.337708",
+  "lastUpdated": "2026-02-17T18:53:36.488664",
   "email": {
-    "totalSent": 3587,
-    "delivered": 3587,
-    "bounced": 0,
+    "totalSent": 1176,
+    "delivered": 1176,
+    "bounced": 201,
     "replied": 0,
-    "todaySent": 679
+    "todaySent": 44
   },
   "pipeline": {
     "totalContacts": 3749,
-    "leads": 0,
-    "contacted": 0,
+    "leads": 1701,
+    "contacted": 2048,
     "replied": 0
   },
-  "totalSent": 3587,
-  "delivered": 3587,
-  "bounced": 0,
+  "totalSent": 1176,
+  "delivered": 1176,
+  "bounced": 201,
   "replied": 0,
   "pipelineContacts": 3749,
-  "pipelineLeads": 0,
-  "pipelineContacted": 0,
+  "pipelineLeads": 1701,
+  "pipelineContacted": 2048,
   "pipelineReplied": 0
 }
