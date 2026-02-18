@@ -1,8 +1,8 @@
 {
-  "lastUpdated": "2026-02-18T15:52:45.327132",
+  "lastUpdated": "2026-02-18T16:22:21.986558",
   "email": {
     "totalSent": 6037,
-    "delivered": 5923,
+    "delivered": 6037,
     "bounced": 0,
     "failed": 114,
     "replied": 0,
@@ -11,7 +11,7 @@
   "pipeline": {
     "contacts": 3804,
     "leads": 0,
-    "contacted": 1509
+    "contacted": 2821
   },
   "totalSent": 6037,
   "delivered": 6037,
