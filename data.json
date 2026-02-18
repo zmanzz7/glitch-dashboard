@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-02-18T12:52:32.632682",
+  "lastUpdated": "2026-02-18T13:22:23.842733",
   "email": {
-    "totalSent": 4698,
+    "totalSent": 4812,
     "delivered": 4698,
     "bounced": 0,
     "failed": 114,
@@ -13,7 +13,7 @@
     "leads": 827,
     "contacted": 2937
   },
-  "totalSent": 4698,
+  "totalSent": 4812,
   "delivered": 4698,
   "bounced": 0,
   "replied": 0
