@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-02-23T09:30:27.689135",
+  "lastUpdated": "2026-02-23T09:52:03.525167",
   "email": {
     "totalSent": 7764,
     "delivered": 7650,
@@ -10,8 +10,8 @@
     "contacts": 86
   },
   "pipeline": {
-    "contacts": 96,
-    "leads": 96,
+    "contacts": 120,
+    "leads": 120,
     "contacted": 0
   },
   "totalSent": 7764,
