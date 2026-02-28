@@ -1,14 +1,14 @@
 {
-  "lastUpdated": "2026-02-28T00:19:23.863533",
+  "lastUpdated": "2026-02-28T00:49:18.283486",
   "email": {
     "totalSent": 3109,
     "delivered": 3109,
     "bounced": 0,
     "failed": 0,
     "replied": 0,
-    "todaySent": 706,
+    "todaySent": 0,
     "contacts": 7182,
-    "followupsSent": 244
+    "followupsSent": 1274
   },
   "pipeline": {
     "contacts": 7182,
