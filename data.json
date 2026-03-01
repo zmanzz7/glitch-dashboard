@@ -1,23 +1,23 @@
 {
-  "lastUpdated": "2026-02-28T21:22:13.774433",
+  "lastUpdated": "2026-02-28T21:52:10.775923",
   "email": {
-    "totalSent": 4721,
-    "delivered": 4721,
-    "bounced": 0,
-    "failed": 0,
+    "totalSent": 4427,
+    "delivered": 4425,
+    "bounced": 2,
+    "failed": 2,
     "replied": 0,
-    "todaySent": 1612,
-    "contacts": 7290,
-    "followupsSent": 244
+    "todaySent": 0,
+    "contacts": 5021,
+    "followupsSent": 0
   },
   "pipeline": {
-    "contacts": 7290,
-    "leads": 7290,
-    "contacted": 4721,
-    "queued": 2569
+    "contacts": 5021,
+    "leads": 5021,
+    "contacted": 4427,
+    "queued": 598
   },
-  "totalSent": 4721,
-  "delivered": 4721,
-  "bounced": 0,
+  "totalSent": 4427,
+  "delivered": 4425,
+  "bounced": 2,
   "replied": 0
 }
