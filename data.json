@@ -1,10 +1,10 @@
 {
-  "lastUpdated": "2026-03-01T15:41:12.092246",
+  "lastUpdated": "2026-03-01T16:11:27.064802",
   "email": {
     "totalSent": 5122,
-    "delivered": 2062,
-    "bounced": 201,
-    "failed": 201,
+    "delivered": 5122,
+    "bounced": 0,
+    "failed": 0,
     "replied": 0,
     "todaySent": 401,
     "contacts": 7487,
@@ -17,7 +17,7 @@
     "queued": 2365
   },
   "totalSent": 5122,
-  "delivered": 2062,
-  "bounced": 201,
+  "delivered": 5122,
+  "bounced": 0,
   "replied": 0
 }
