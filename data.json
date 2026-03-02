@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-03-02T04:30:40.320851",
+  "lastUpdated": "2026-03-02T05:00:42.554564",
   "email": {
     "totalSent": 5152,
     "delivered": 5152,
     "bounced": 0,
     "failed": 0,
     "replied": 0,
-    "todaySent": 58,
+    "todaySent": 30,
     "contacts": 7487,
     "followupsSent": 244,
     "reengagementSent": 1274
