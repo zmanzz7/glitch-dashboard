@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-03-02T12:32:18.716018",
+  "lastUpdated": "2026-03-02T13:02:28.523392",
   "email": {
-    "totalSent": 5678,
-    "delivered": 5678,
+    "totalSent": 4840,
+    "delivered": 4840,
     "bounced": 0,
     "failed": 0,
     "replied": 0,
-    "todaySent": 556,
+    "todaySent": 0,
     "contacts": 7574,
     "followupsSent": 0,
     "reengagementSent": 0
@@ -14,11 +14,11 @@
   "pipeline": {
     "contacts": 7574,
     "leads": 7574,
-    "contacted": 5678,
-    "queued": 1896
+    "contacted": 4840,
+    "queued": 403
   },
-  "totalSent": 5678,
-  "delivered": 5678,
+  "totalSent": 4840,
+  "delivered": 4840,
   "bounced": 0,
   "replied": 0
 }
